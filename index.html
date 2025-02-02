@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>Guess a Number</h2>
+            <input type="number" id="inputno" placeholder="Enter number">
+            <button onclick="guess()">Start</button>
+        </div>
+    </div>
+    
+    <script>
+        let guessed = Math.floor(Math.random() * 10);
+        
+        function guess() {
+            let input = document.getElementById("inputno");
+            let ans = parseInt(input.value);
+
+            if (isNaN(ans)) {
+                alert("Please enter a valid number");
+                return;
+            }
+
+            if (ans === guessed) {
+                alert("You won the game!");
+            } else if (ans > guessed) {
+                alert("Guess a lower number");
+            } else {
+                alert("Guess a higher number");
+            }
+        }
+    </script>
+</body>
+</html>
